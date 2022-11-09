@@ -5,7 +5,7 @@
         public static void Main(string[] args)
         {
             Console.WriteLine("Please Choose The Option Can Be Executed: ");
-            Console.WriteLine("Find the Max Value Out Of Three: \n1.Integers \n2.Float \n3.String \n4.Generic Method \n5.Exit");
+            Console.WriteLine("Find the Max Value Out Of Three: \n1.Integers \n2.Float \n3.String \n4.Generic Method \n5.Generic Class \n6.Exit");
             Console.Write("Enter the selected Option: ");
             int option = Convert.ToInt32(Console.ReadLine());
             FindMaxNum findMaxNum = new FindMaxNum();
@@ -62,6 +62,18 @@
 
                     Console.ReadKey();
                     break;
+                case 5:
+                    Console.WriteLine("For Determining Max Using Generic Class: ");
+
+                    int maxIntclass = new FindMaxNum<int>(1, 2, 3).GetMaximum();
+                    double maxFloatclass = new FindMaxNum<double>(1.1f, 9.4f, 5.7f).GetMaximum();
+                    string maxStringclass = new FindMaxNum<string>("Apple", "Peach", "Banana").GetMaximum();
+
+                    Console.WriteLine(maxIntclass);
+                    Console.WriteLine(maxFloatclass);
+                    Console.WriteLine(maxStringclass);
+                    Console.ReadLine();
+                    break;
 
                 default:
                     break;
@@ -73,10 +85,12 @@
 
 }
 
-//UC-4
-//Refactor all the 3 to One Generic Method and find the maximum
+//UC-3 Refactor-2
+//Refactor to create Generic Class to take in 3 variables of Generic Type
 //- Ensure the Generic Type extends Comparable
-//- Make the test case work
+//- Write parameter constructor
+//- Write testMaximum method to internally call the static testMaximum method passing the 3 instance variables
+//- Define new test case to use the Generic Class
 
 //Result
 
