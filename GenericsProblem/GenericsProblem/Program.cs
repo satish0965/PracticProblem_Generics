@@ -5,7 +5,7 @@
         public static void Main(string[] args)
         {
             Console.WriteLine("Please Choose The Option Can Be Executed: ");
-            Console.WriteLine("Find the Max Value Out Of Three: \n1.Integers \n2.Float \n3.String \n4.Exit");
+            Console.WriteLine("Find the Max Value Out Of Three: \n1.Integers \n2.Float \n3.String \n4.Generic Method \n5.Exit");
             Console.Write("Enter the selected Option: ");
             int option = Convert.ToInt32(Console.ReadLine());
             FindMaxNum findMaxNum = new FindMaxNum();
@@ -50,6 +50,19 @@
                         Console.WriteLine("{0} is Maximum out of {1} ,{2}, {3}", findMaxNum.GetMaximumstring(first_String, second_String, third_String), first_String, second_String, third_String);
                     break;
                 case 4:
+                    Console.WriteLine("For Determining Max Generic Method: ");
+
+                    int maxInt = FindMaxNum.GetMaximum<int>(1, 2, 3);
+                    double maxFloat = FindMaxNum.GetMaximum<double>(1.1f, 9.4f, 5.7f);
+                    string maxString = FindMaxNum.GetMaximum<string>("Apple", "Peach", "Banana");
+
+                    Console.WriteLine(maxInt);
+                    Console.WriteLine(maxFloat);
+                    Console.WriteLine(maxString);
+
+                    Console.ReadKey();
+                    break;
+
                 default:
                     break;
             }
@@ -60,10 +73,10 @@
 
 }
 
-//UC-3
-//Given 3 Strings find the maximum
-//- Ensure to test code with the Test Case and repeat with the similar 3 Test cases in UC 1
-//- E.g. Apple Peach Banana
+//UC-4
+//Refactor all the 3 to One Generic Method and find the maximum
+//- Ensure the Generic Type extends Comparable
+//- Make the test case work
 
 //Result
 
@@ -72,13 +85,10 @@
 //1.Integers
 //2.Float
 //3.String
-//4.Exit
-//Enter the selected Option: 3
-//For Determining Max of String:
-//Enter the First String:
-//Apple
-//Enter the Second String:
+//4.Generic Method
+//5.Exit
+//Enter the selected Option: 4
+//For Determining Max Generic Method:
+//3
+//9.399999618530273
 //Peach
-//Enter the Third String:
-//Banana
-//Peach is Maximum out of Apple , Peach, Banana
