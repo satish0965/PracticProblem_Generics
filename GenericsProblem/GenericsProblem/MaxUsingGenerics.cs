@@ -45,6 +45,28 @@ namespace GenericsProblems
                 return 0.0;
             }
 
+
+        }
+        //UC 3: Given 3 Strings Find The Maximum.
+        public string GetMaximumstring(string first_String, string second_String, string third_String)
+        {
+            if (first_String.CompareTo(second_String) > 0 && first_String.CompareTo(third_String) > 0)
+            {
+                return first_String;
+            }
+            else if (second_String.CompareTo(first_String) > 0 && second_String.CompareTo(third_String) > 0)
+            {
+                return second_String;
+            }
+            else if (third_String.CompareTo(first_String) > 0 && third_String.CompareTo(second_String) > 0)
+            {
+                return third_String;
+            }
+            else
+            {
+                Console.WriteLine("\teither 2 or 3 values are equal");
+                return null;
+            }
         }
     }
 }
